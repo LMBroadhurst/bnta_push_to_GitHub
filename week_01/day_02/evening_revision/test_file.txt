@@ -1,0 +1,165 @@
+➜  ~ pwd
+/Users/lewis
+LOCATE WHERE WE CURRENTLY ARE IN THE DIRECTORY
+
+➜  ~ ls
+Applications   Documents      Library        Pictures
+BNTA Workspace Downloads      Movies         Public
+Desktop        IdeaProjects   Music
+LIST WHAT FILES ARE WITHIN THE CURRENT FOLDER
+
+➜  ~ BNTA\ Workspace
+MOVE INTO THE BNTA WORKSPACE FOLDER
+
+➜  BNTA Workspace ls
+Test    week_01
+LIST WHAT IS IN THE CURRENT FOLDER
+
+➜  BNTA Workspace ls -al
+total 16
+drwxr-xr-x   5 lewis  staff   160 12 Apr 13:20 .
+drwxr-x---+ 29 lewis  staff   928 12 Apr 21:03 ..
+-rw-r--r--@  1 lewis  staff  6148 12 Apr 13:20 .DS_Store
+drwxr-xr-x   4 lewis  staff   128 12 Apr 13:04 Test
+drwxr-xr-x   4 lewis  staff   128 12 Apr 13:20 week_01
+USED THE -AL TAG TO FIND "HIDDEN"/"ALL" FILES AND MORE DETAILS WITH L.
+
+➜  BNTA Workspace week_01
+➜  week_01 ls
+day_02
+MOVE INTO THE WEEK_01 FOLDER AND FIND WHAT IS INSIDE
+
+➜  week_01 day_02
+➜  day_02 ls
+intro_to_git
+FIND WHAT IS IN THE DAY_02 FOLDER
+
+➜  day_02 intro_to_git
+➜  intro_to_git git:(main) ✗ dc ..
+➜  intro_to_git git:(main) ✗ ..
+➜  day_02 mkdir evening_revision
+➜  day_02 ls
+evening_revision intro_to_git
+MOVE OUT OF THE INTRO_TO_GIT DIRECTORY
+CREATE AN EVENING_REVISION DIRECTORY
+VIEW THE DIRECTORY TO CHECK NEW INNER DIRECTORY HAS BEEN CREATED
+
+➜  day_02 evening_revision
+➜  evening_revision touch test_file.txt
+➜  evening_revision ls
+test_file.txt
+CREATE A NEW TEST_FILE TO RECAP THE TOUCH COMMAND
+CHECKED TOUCH HAD BEEN SUCCESSFUL
+
+➜  evening_revision git init
+Initialized empty Git repository in /Users/lewis/BNTA Workspace/week_01/day_02/evening_revision/.git/
+➜  evening_revision git:(main) ✗ git add test_file.txt 
+➜  evening_revision git:(main) ✗ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   test_file.txt
+
+➜  evening_revision git:(main) ✗ code test_file.txt
+INITIALISED THE GIT REPO WITH GIT INIT
+ADDED THE TEST FILE
+CHECKED THE STATUS TO SEE THE STATUS OF THE REPO
+OPENED THE FILE WITH CODE ___, AND ADDED THESE NOTES
+
+
+
+
+➜  evening_revision git:(main) ✗ git commit -m "Add first file to repo"
+[main (root-commit) e56fdb3] Add first file to repo
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test_file.txt
+ADDED THE FILE TO REPO BUT BECAUSE I HAD MADE CHANGES AFTER ADDING, I HAD TO ADD AGAIN
+
+
+➜  evening_revision git:(main) ✗ git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   test_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+THIS SUGGESTED THAT I HAD TO RE ADD THE FILE
+
+
+➜  evening_revision git:(main) ✗ git add test_file.txt
+➜  evening_revision git:(main) ✗ git commit -m "Update repo with added text"
+[main 27985f4] Update repo with added text
+ 1 file changed, 70 insertions(+)
+➜  evening_revision git:(main) git status
+On branch main
+nothing to commit, working tree clean
+HERE I RE-ADDED THE FILE AND COMMITED THE "REAL CHANGES"
+
+
+➜  evening_revision git:(main) git log
+➜  evening_revision git:(main) npx git-setup
+? What is your name? (Lewis Broadhurst) (node:18588) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:18588) Warning: Accessing non-existent property 'cd' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'chmod' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'cp' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'dirs' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'pushd' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'popd' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'echo' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'tempdir' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'pwd' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'exec' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'ls' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'find' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'grep' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'head' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'ln' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'mkdir' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'rm' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'mv' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'sed' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'set' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'sort' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'tail' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'test' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'to' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'toEnd' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'touch' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'uniq' of module exports inside circular dependency
+(node:18588) Warning: Accessing non-existent property 'which' of module exports inside circular dependency
+? What is your name? Lewis Broadhurst
+? What is the email address you sign into GitHub with? lewis1broadhurst@gmail.co
+m
+Found an existing SSH key.
+Please create a new key at https://github.com/settings/keys
+SSH key copied to clipboard, just paste it into GitHub.
+Here it is if you lose it:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCprI0/HssfwLH6eBexjbGSi+D3Py/ZF95OMdqFA0CFKfoUg0dn3vdrYnci8u+LDrP7R+CsEVdo1NqP3nbLUaG/fHbOlC/shGPN5jGUVKBdhFzFSaictMhyXlcoyEuLQkaE1qugqbnAkckRBaZz3CqMYN4FLBNovvlIFabqsO+XJoaF4MdTnRPO1WsLpU2ZPb3NTSSrfY0x77yadeDD+try4Z7NFyM6LdJIG12jIPa3u7aEwZAVm9G4pQVhaPP9ltthYmA2aL10KHra7bXBio+hHAUv4aF3UtmEog4X3AO9ExSQs5LTtavQrJprKihInOn3MS4Wy9PrBBEsEL8LPL67/GVn1prnmZI2zbkIH4n55t3N0Q/vMxG4OIn3SJhX9HUE59jhdCJb3swWMIYyfnUsOzjrMIzJoREDLlhbdDDMMPoBH0knSTzALCpaMTYorgyk0hT8KQXUGS3PvsAkZdn9Qka1I98C/nqxu8jixdBe1pDLYFqiSggbdztGGIYj2t6YnN62areK+YnW5Ik2ajiWeccGN3bTrFQVtQkqH6bw5SvbK1DKOvOMMPBKD39TY0eMDDWcn4AcfHJWBCOfaRRuwifXgq4lQgq1+TF+zQGrEjDcAz0xAUMFLEzwlr6wynyEOQE4nHXwVolEg0HkCifhUK1YIFLhvThphijDy+jtjQ== lewis1broadhurst@gmail.com
+
+Done!
+HERE I FOLLOWED THE SETUP AGAIN BUT THERE WAS NO NEED TO DO IT, TOLD ME I WAS ALREADY AUTHENTICATED
+
+
+
+➜  evening_revision git:(main) ssh git@github.com   
+PTY allocation request failed on channel 0
+Hi LMBroadhurst! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+➜  evening_revision git:(main) git remote add origin git@github.com:LMBroadhurst/evening_revision_day02.git
+➜  evening_revision git:(main) git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 1.35 KiB | 1.35 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:LMBroadhurst/evening_revision_day02.git
+ * [new branch]      main -> main
+➜  evening_revision git:(main) 
+
+HERE I PUSHED THE GIT REPO CODE TO MY GITHUB ACCOUNT, TO FINISH THE STEPS THAT WE HAD DONE IN THE DAY

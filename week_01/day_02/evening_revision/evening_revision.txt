@@ -1,0 +1,317 @@
+Last login: Tue Apr 12 11:06:07 on ttys000
+➜  ~ pwd                                                                       
+/Users/lewis
+➜  ~ ls
+Applications   Documents      Library        Pictures
+BNTA Workspace Downloads      Movies         Public
+Desktop        IdeaProjects   Music
+➜  ~ ls -l
+total 0
+drwx------@  3 lewis  staff    96 11 Apr 13:53 Applications
+drwxr-xr-x   3 lewis  staff    96 11 Apr 14:00 BNTA Workspace
+drwx------+  3 lewis  staff    96 11 Apr 12:29 Desktop
+drwx------+  4 lewis  staff   128 11 Apr 15:46 Documents
+drwx------+  5 lewis  staff   160 11 Apr 15:09 Downloads
+drwxr-xr-x   3 lewis  staff    96 12 Apr 09:35 IdeaProjects
+drwx------@ 76 lewis  staff  2432 12 Apr 00:30 Library
+drwx------   4 lewis  staff   128 12 Apr 00:32 Movies
+drwx------+  3 lewis  staff    96 11 Apr 12:29 Music
+drwx------+  4 lewis  staff   128 11 Apr 16:16 Pictures
+drwxr-xr-x+  4 lewis  staff   128 11 Apr 12:29 Public
+➜  ~ clear
+
+
+
+➜  ~ ls -a
+.                                    .zsh_sessions
+..                                   .zshrc
+.CFUserTextEncoding                  Applications
+.DS_Store                            BNTA Workspace
+.Trash                               Desktop
+.android                             Documents
+.gitconfig                           Downloads
+.oh-my-zsh                           IdeaProjects
+.vscode                              Library
+.zcompdump-Lewis’s MacBook Air-5.8   Movies
+.zprofile                            Music
+.zprofileeval                        Pictures
+.zsh_history                         Public
+➜  ~ clear
+
+
+
+
+
+
+
+
+
+➜  ~ ls -al
+total 160
+drwxr-x---+ 26 lewis  staff    832 12 Apr 11:18 .
+drwxr-xr-x   5 root   admin    160 11 Apr 12:29 ..
+-rw-------   1 lewis  staff      3 11 Apr 12:29 .CFUserTextEncoding
+-rw-r--r--@  1 lewis  staff  10244 12 Apr 10:39 .DS_Store
+drwx------+  2 lewis  staff     64 11 Apr 15:09 .Trash
+drwxr-xr-x   2 lewis  staff     64 11 Apr 14:14 .android
+-rw-r--r--   1 lewis  staff     29 11 Apr 14:57 .gitconfig
+drwxr-xr-x  22 lewis  staff    704 12 Apr 11:06 .oh-my-zsh
+drwxr-xr-x   4 lewis  staff    128 11 Apr 13:56 .vscode
+-rw-r--r--   1 lewis  staff  48109 12 Apr 11:06 .zcompdump-Lewis’s MacBook Air-5.8
+-rw-r--r--   1 lewis  staff     84 11 Apr 14:55 .zprofile
+-rw-r--r--   1 lewis  staff    360 11 Apr 14:53 .zprofileeval
+-rw-------   1 lewis  staff   1646 12 Apr 11:18 .zsh_history
+drwx------  25 lewis  staff    800 12 Apr 11:07 .zsh_sessions
+-rw-r--r--   1 lewis  staff   3866 12 Apr 11:06 .zshrc
+drwx------@  3 lewis  staff     96 11 Apr 13:53 Applications
+drwxr-xr-x   3 lewis  staff     96 11 Apr 14:00 BNTA Workspace
+drwx------+  3 lewis  staff     96 11 Apr 12:29 Desktop
+drwx------+  4 lewis  staff    128 11 Apr 15:46 Documents
+drwx------+  5 lewis  staff    160 11 Apr 15:09 Downloads
+drwxr-xr-x   3 lewis  staff     96 12 Apr 09:35 IdeaProjects
+drwx------@ 76 lewis  staff   2432 12 Apr 00:30 Library
+drwx------   4 lewis  staff    128 12 Apr 00:32 Movies
+drwx------+  3 lewis  staff     96 11 Apr 12:29 Music
+drwx------+  4 lewis  staff    128 11 Apr 16:16 Pictures
+drwxr-xr-x+  4 lewis  staff    128 11 Apr 12:29 Public
+➜  ~ cd Documents
+➜  Documents ls  
+Zoom test
+➜  Documents test
+➜  Documents cd test
+➜  test cd ..
+➜  Documents cd
+➜  ~ cd Documents
+➜  Documents pwd
+/Users/lewis/Documents
+➜  Documents ls
+Zoom test
+➜  Documents Zoom
+➜  Zoom cd ..
+➜  Documents mkdir
+usage: mkdir [-pv] [-m mode] directory_name ...
+➜  Documents mkdir my_directory
+➜  Documents ls
+Zoom         my_directory test
+➜  Documents cd my_directory 
+➜  my_directory touch my_test_file.txt
+➜  my_directory ls
+my_test_file.txt
+➜  my_directory touch my_picture.ong
+➜  my_directory touch my_picture.png
+➜  my_directory ls
+my_picture.ong   my_picture.png   my_test_file.txt
+➜  my_directory mkdir first_folder second_folder
+➜  my_directory ls
+first_folder     my_picture.ong   my_picture.png   my_test_file.txt second_folder
+➜  my_directory mv my_picture.png first_folder
+➜  my_directory ls
+first_folder     my_picture.ong   my_test_file.txt second_folder
+➜  my_directory cs pictures
+zsh: command not found: cs
+➜  my_directory cd pictures
+cd: no such file or directory: pictures
+➜  my_directory cd first_folder
+➜  first_folder ls
+my_picture.png
+➜  first_folder cd ..
+➜  my_directory ls
+first_folder     my_picture.ong   my_test_file.txt second_folder
+➜  my_directory mv my_picture.ong my_picture.png
+➜  my_directory ls
+first_folder     my_picture.png   my_test_file.txt second_folder
+➜  my_directory cp my_picture.png
+usage: cp [-R [-H | -L | -P]] [-fi | -n] [-aclpsvXx] source_file target_file
+       cp [-R [-H | -L | -P]] [-fi | -n] [-aclpsvXx] source_file ... target_directory
+➜  my_directory ls
+first_folder     my_picture.png   my_test_file.txt second_folder
+➜  my_directory rm my_test_file.txt
+➜  my_directory ls
+first_folder   my_picture.png second_folder
+➜  my_directory 
+➜  my_directory 
+➜  my_directory rm -r second_folder
+➜  my_directory clear
+
+➜  my_directory pwd
+/Users/lewis/Documents/my_directory
+➜  my_directory ..
+➜  Documents ..
+➜  ~ Documents
+➜  Documents ls
+Zoom         my_directory test
+➜  Documents Zoom
+➜  Zoom cd
+➜  ~ ls
+Applications   Desktop        Downloads      Library        Music          Public
+BNTA Workspace Documents      IdeaProjects   Movies         Pictures
+➜  ~ BNTA Workspace
+zsh: command not found: BNTA
+➜  ~ cd BNTA Workspace
+cd: string not in pwd: BNTA
+➜  ~ pwd
+/Users/lewis
+➜  ~ ls
+Applications   Desktop        Downloads      Library        Music          Public
+BNTA Workspace Documents      IdeaProjects   Movies         Pictures
+➜  ~ pwd
+/Users/lewis
+➜  ~ ls
+Applications   Desktop        Downloads      Library        Music          Public
+BNTA Workspace Documents      IdeaProjects   Movies         Pictures
+➜  ~ cd BNTA\ Workspace 
+➜  BNTA Workspace mkdir week_01
+➜  BNTA Workspace week_01
+➜  week_01 mkdir day_02
+➜  week_01 ls
+day_02
+➜  week_01 mkdir intro_to_git
+➜  week_01 cd intro_to_git 
+➜  intro_to_git git init
+Initialized empty Git repository in /Users/lewis/BNTA Workspace/week_01/intro_to_git/.git/
+➜  intro_to_git git:(main) clear
+
+
+
+➜  intro_to_git git:(main) ls -a
+.    ..   .git
+➜  intro_to_git git:(main) touch facts.txt
+➜  intro_to_git git:(main) ✗ ls
+facts.txt
+➜  intro_to_git git:(main) ✗ code facts.txt
+➜  intro_to_git git:(main) ✗ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	facts.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  intro_to_git git:(main) ✗ git add facts.txt
+➜  intro_to_git git:(main) ✗ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   facts.txt
+
+➜  intro_to_git git:(main) ✗ git commit -m "Added first fact"
+[main (root-commit) 135aecd] Added first fact
+ Committer: Lewis Broadhurst <lewis@Lewiss-Air.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 2 insertions(+)
+ create mode 100644 facts.txt
+➜  intro_to_git git:(main) git status
+On branch main
+nothing to commit, working tree clean
+➜  intro_to_git git:(main) git log
+➜  intro_to_git git:(main) git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   facts.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  intro_to_git git:(main) ✗ git add .
+➜  intro_to_git git:(main) ✗ git commit -m "Add second fact"
+[main 3808b27] Add second fact
+ Committer: Lewis Broadhurst <lewis@Lewiss-Air.lan>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+➜  intro_to_git git:(main) git log
+➜  intro_to_git git:(main) npx git-setup
+Need to install the following packages:
+  git-setup
+Ok to proceed? (y) y
+? What is your name? () (node:17158) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:17158) Warning: Accessing non-existent property 'cd' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'chmod' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'cp' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'dirs' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'pushd' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'popd' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'echo' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'tempdir' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'pwd' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'exec' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'ls' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'find' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'grep' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'head' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'ln' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'mkdir' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'rm' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'mv' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'sed' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'set' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'sort' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'tail' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'test' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'to' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'toEnd' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'touch' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'uniq' of module exports inside circular dependency
+(node:17158) Warning: Accessing non-existent property 'which' of module exports inside circular dependency
+? What is your name? Lewis Broadhurst
+? What is the email address you sign into GitHub with? lewis1broadhurst@gmail.com
+Generating an SSH key for you...
+Please create a new key at https://github.com/settings/keys
+SSH key copied to clipboard, just paste it into GitHub.
+Here it is if you lose it:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCprI0/HssfwLH6eBexjbGSi+D3Py/ZF95OMdqFA0CFKfoUg0dn3vdrYnci8u+LDrP7R+CsEVdo1NqP3nbLUaG/fHbOlC/shGPN5jGUVKBdhFzFSaictMhyXlcoyEuLQkaE1qugqbnAkckRBaZz3CqMYN4FLBNovvlIFabqsO+XJoaF4MdTnRPO1WsLpU2ZPb3NTSSrfY0x77yadeDD+try4Z7NFyM6LdJIG12jIPa3u7aEwZAVm9G4pQVhaPP9ltthYmA2aL10KHra7bXBio+hHAUv4aF3UtmEog4X3AO9ExSQs5LTtavQrJprKihInOn3MS4Wy9PrBBEsEL8LPL67/GVn1prnmZI2zbkIH4n55t3N0Q/vMxG4OIn3SJhX9HUE59jhdCJb3swWMIYyfnUsOzjrMIzJoREDLlhbdDDMMPoBH0knSTzALCpaMTYorgyk0hT8KQXUGS3PvsAkZdn9Qka1I98C/nqxu8jixdBe1pDLYFqiSggbdztGGIYj2t6YnN62areK+YnW5Ik2ajiWeccGN3bTrFQVtQkqH6bw5SvbK1DKOvOMMPBKD39TY0eMDDWcn4AcfHJWBCOfaRRuwifXgq4lQgq1+TF+zQGrEjDcAz0xAUMFLEzwlr6wynyEOQE4nHXwVolEg0HkCifhUK1YIFLhvThphijDy+jtjQ== lewis1broadhurst@gmail.com
+
+Done!
+npm notice 
+npm notice New minor version of npm available! 8.5.5 -> 8.6.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.6.0
+npm notice Run npm install -g npm@8.6.0 to update!
+npm notice 
+➜  intro_to_git git:(main) ssh git@github.com
+The authenticity of host 'github.com (140.82.121.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+PTY allocation request failed on channel 0
+Hi LMBroadhurst! You've successfully authenticated, but GitHub does not provide shell access.
+Connection to github.com closed.
+➜  intro_to_git git:(main) git remote add origin git@github.com:LMBroadhurst/intro_to_git.git 
+➜  intro_to_git git:(main) git push origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 555 bytes | 555.00 KiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:LMBroadhurst/intro_to_git.git
+ * [new branch]      main -> main
+➜  intro_to_git git:(main) clear
+
+➜  intro_to_git git:(main) 
+

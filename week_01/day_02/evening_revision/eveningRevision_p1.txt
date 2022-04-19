@@ -1,0 +1,70 @@
+➜  ~ pwd
+/Users/lewis
+LOCATE WHERE WE CURRENTLY ARE IN THE DIRECTORY
+
+➜  ~ ls
+Applications   Documents      Library        Pictures
+BNTA Workspace Downloads      Movies         Public
+Desktop        IdeaProjects   Music
+LIST WHAT FILES ARE WITHIN THE CURRENT FOLDER
+
+➜  ~ BNTA\ Workspace
+MOVE INTO THE BNTA WORKSPACE FOLDER
+
+➜  BNTA Workspace ls
+Test    week_01
+LIST WHAT IS IN THE CURRENT FOLDER
+
+➜  BNTA Workspace ls -al
+total 16
+drwxr-xr-x   5 lewis  staff   160 12 Apr 13:20 .
+drwxr-x---+ 29 lewis  staff   928 12 Apr 21:03 ..
+-rw-r--r--@  1 lewis  staff  6148 12 Apr 13:20 .DS_Store
+drwxr-xr-x   4 lewis  staff   128 12 Apr 13:04 Test
+drwxr-xr-x   4 lewis  staff   128 12 Apr 13:20 week_01
+USED THE -AL TAG TO FIND "HIDDEN"/"ALL" FILES AND MORE DETAILS WITH L.
+
+➜  BNTA Workspace week_01
+➜  week_01 ls
+day_02
+MOVE INTO THE WEEK_01 FOLDER AND FIND WHAT IS INSIDE
+
+➜  week_01 day_02
+➜  day_02 ls
+intro_to_git
+FIND WHAT IS IN THE DAY_02 FOLDER
+
+➜  day_02 intro_to_git
+➜  intro_to_git git:(main) ✗ dc ..
+➜  intro_to_git git:(main) ✗ ..
+➜  day_02 mkdir evening_revision
+➜  day_02 ls
+evening_revision intro_to_git
+MOVE OUT OF THE INTRO_TO_GIT DIRECTORY
+CREATE AN EVENING_REVISION DIRECTORY
+VIEW THE DIRECTORY TO CHECK NEW INNER DIRECTORY HAS BEEN CREATED
+
+➜  day_02 evening_revision
+➜  evening_revision touch test_file.txt
+➜  evening_revision ls
+test_file.txt
+CREATE A NEW TEST_FILE TO RECAP THE TOUCH COMMAND
+CHECKED TOUCH HAD BEEN SUCCESSFUL
+
+➜  evening_revision git init
+Initialized empty Git repository in /Users/lewis/BNTA Workspace/week_01/day_02/evening_revision/.git/
+➜  evening_revision git:(main) ✗ git add test_file.txt 
+➜  evening_revision git:(main) ✗ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   test_file.txt
+
+➜  evening_revision git:(main) ✗ code test_file.txt
+INITIALISED THE GIT REPO WITH GIT INIT
+ADDED THE TEST FILE
+CHECKED THE STATUS TO SEE THE STATUS OF THE REPO
+OPENED THE FILE WITH CODE ___, AND ADDED THESE NOTES
