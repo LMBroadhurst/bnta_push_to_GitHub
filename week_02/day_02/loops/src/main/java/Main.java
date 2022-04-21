@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
@@ -12,7 +14,7 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
+    public static void mainAM2(String[] args) {
 
         ArrayList<String> footballTeams = new ArrayList<>();
 
@@ -70,4 +72,6 @@ public class Main {
         System.out.println(footballTeams);
 
     }
+
 }
+
