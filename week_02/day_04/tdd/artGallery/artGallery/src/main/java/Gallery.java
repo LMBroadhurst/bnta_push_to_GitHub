@@ -58,14 +58,24 @@ public class Gallery {
 
     public void sellArtwork(Artwork artwork) {
         this.artworks.remove(artwork);
-        this.cashReserves += 10000;
+//        this.cashReserves += 10000;
+    }
+
+    public void printOutCollection() {
+        for (int i = 0; i < this.artworks.size(); i++) {
+            System.out.println(artworks.get(i).getTitle());
+        }
     }
 
     public void buyArtwork(Artwork artwork, Artist artist) {
 
     }
 
-    public int stockTake() {
-        return 0;
+    public void stockTake() {
+        int total = 0;
+        for (int i = 0; i < this.artworks.size(); i++) {
+            total += this.artworks.get(i).getPrice();
+        }
+        System.out.println(total);
     }
 }

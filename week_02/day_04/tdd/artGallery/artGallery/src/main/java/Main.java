@@ -4,7 +4,7 @@ public class Main {
 
 //        Customers
 
-        Customer lewis = new Customer("Lewis", 1000);
+        Customer lewis = new Customer("Lewis", 100000);
         Customer falak = new Customer("Falak", 2000);
 
 //        Testing customer behaviours
@@ -76,7 +76,51 @@ public class Main {
         System.out.println(vincentVanGogh.getWallet());
 
         System.out.println(saatchi.getCashReserves());
+
+        System.out.println("---------");
+
+
+        //    Buy artwork from gallery (customer buys)
+
+        lewis.checkWalletBalance();
+        lewis.printOutCollection();
+        saatchi.checkCashReserve();
+        saatchi.printOutCollection();
+
+        System.out.println("----");
+
+        lewis.buyArtFromGallery(saatchi, sunflowers1);
+        lewis.buyArtFromGallery(saatchi, monaLisa);
+
+        System.out.println("----");
+
+        lewis.checkWalletBalance();
+        lewis.printOutCollection();
+        saatchi.checkCashReserve();
+        saatchi.printOutCollection();
+
+        System.out.println("----");
+
+//        Ability to calculate the value of its collection.
+
+        Artwork picture1 = new Artwork("Picture 1", "Lewis", 5000, "Yes");
+        Artwork picture2 = new Artwork("Picture 2", "Lewis", 5000, "Yes");
+        Artwork picture3 = new Artwork("Picture 3", "Lewis", 5000, "Yes");
+        Artwork picture4 = new Artwork("Picture 4", "Lewis", 5000, "Yes");
+
+        saatchi.addNewArtwork(picture1);
+        saatchi.addNewArtwork(picture2);
+        saatchi.addNewArtwork(picture3);
+        saatchi.addNewArtwork(picture4);
+
+        saatchi.stockTake();
     }
+
+
+
+
+
+
 
 
 

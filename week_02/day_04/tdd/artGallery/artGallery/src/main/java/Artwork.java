@@ -49,6 +49,10 @@ public class Artwork {
 
 //    Behaviours
 
+    public void checkNftIsUnique() {
+
+    }
+
 
 
 }
