@@ -1,10 +1,17 @@
 public class Customer {
 
-    public String name;
-    public int wallet;
+    private String name;
+    private int wallet;
+
+    public Customer(String name, int wallet) {
+        this.name = name;
+        this.wallet = wallet;
+    }
+
+//    Getters and Setters
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -12,10 +19,25 @@ public class Customer {
     }
 
     public int getWallet() {
-        return wallet;
+        return this.wallet;
     }
 
     public void setWallet(int wallet) {
         this.wallet = wallet;
     }
+
+//    Behaviours
+
+    public void depositToWallet(int number) {
+        this.wallet += number;
+    }
+
+    public void withdrawFromWallet(int number) {
+        this.wallet -= number;
+    }
+
+    public void checkWalletBalance() {
+        System.out.println(this.wallet);
+    }
+
 }
