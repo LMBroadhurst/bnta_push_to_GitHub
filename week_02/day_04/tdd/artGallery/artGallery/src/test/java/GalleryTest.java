@@ -68,9 +68,24 @@ class GalleryTest {
 
     @Test
     void buyArtwork() {
+
     }
 
     @Test
     void stockTake() {
+//        Given
+        Artwork art1 = new Artwork("a", "a", 1, "a");
+        Artwork art2 = new Artwork("a", "a", 1, "a");
+        Artwork art3 = new Artwork("a", "a", 1, "a");
+
+        Gallery testGal = new Gallery("a", 1);
+
+//        When
+        testGal.addNewArtwork(art1);
+        testGal.addNewArtwork(art2);
+        testGal.addNewArtwork(art3);
+
+//        Then
+        assertEquals(3, testGal.stockTake());
     }
 }

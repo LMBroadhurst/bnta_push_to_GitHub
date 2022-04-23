@@ -70,11 +70,11 @@ public class Gallery {
 
     }
 
-    public void stockTake() {
+    public int stockTake() {
         int total = 0;
         for (int i = 0; i < this.artworks.size(); i++) {
             total += this.artworks.get(i).getPrice();
         }
-        System.out.println(total);
+        return total;
     }
 }
