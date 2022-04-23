@@ -58,7 +58,6 @@ public class Gallery {
 
     public void sellArtwork(Artwork artwork) {
         this.artworks.remove(artwork);
-//        this.cashReserves += 10000;
     }
 
     public void printOutCollection() {

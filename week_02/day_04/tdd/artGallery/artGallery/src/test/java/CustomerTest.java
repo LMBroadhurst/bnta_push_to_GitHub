@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
@@ -37,5 +39,29 @@ class CustomerTest {
 
 //        Then
         assertEquals(2000, lewis.getWallet());
+    }
+
+    @Test
+    void buyArtFromGalleryTest() {
+
+//        Given
+        Gallery testGallery = new Gallery("testGal", 10000);
+        Artwork testArtwork = new Artwork("testArt", "testArtist", 1000, "nft1");
+        Customer testCustomer = new Customer("testCustomer", 2000);
+//        When
+
+        testCustomer.buyArtFromGallery(testGallery, testArtwork);
+
+//        Then
+        assertEquals("testArt", testCustomer.getOwned_art().get(0).getTitle());
+        assertEquals(800, testCustomer.getWallet());
+        assertEquals(11000, testGallery.getCashReserves());
+//        How to test there is an empty array list?
+        assertEquals(true, testGallery.getArtworks().isEmpty());
+    }
+
+    @Test
+    void printOutCollectionTEst() {
+        
     }
 }
