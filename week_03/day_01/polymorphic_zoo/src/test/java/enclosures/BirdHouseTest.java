@@ -11,7 +11,6 @@ class BirdHouseTest {
 
     @Test
     void canCountAnimals() {
-
         BirdHouse birdHouse = new BirdHouse("Test bHouse");
         assertEquals(0, birdHouse.countAnimals());
 
