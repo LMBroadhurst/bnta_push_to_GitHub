@@ -1,6 +1,8 @@
-public class Penguin extends Animal {
+package animals;
 
-    public Penguin(String name, int age, String diet) {
+public abstract class Bird extends Animal{
+
+    public Bird(String name, int age, String diet) {
         super(name, age, diet);
     }
 
@@ -8,13 +10,8 @@ public class Penguin extends Animal {
         return "I laid an egg!";
     }
 
-    public String introduce() {
-        return "Hello there :)";
-    }
-
     public void reproduce() {
         layEgg();
         System.out.println("*Pushes out egg*");
     }
-
 }

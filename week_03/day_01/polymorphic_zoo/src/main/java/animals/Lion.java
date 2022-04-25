@@ -1,3 +1,5 @@
+package animals;
+
 public class Lion extends Animal {
 
     boolean canWaitToBeKing;

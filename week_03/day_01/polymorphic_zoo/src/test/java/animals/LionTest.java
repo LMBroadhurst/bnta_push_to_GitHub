@@ -1,3 +1,7 @@
+package animals;
+
+import animals.Animal;
+import animals.Lion;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
