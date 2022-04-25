@@ -1,6 +1,6 @@
 public abstract class Animal {
 
-    private String name;
+    protected String name;
     private String diet;
     private int age;
 
@@ -54,5 +54,7 @@ public abstract class Animal {
     public String introduce() {
         return "My name is " + this.name;
     }
+
+    public abstract void reproduce();
 
 }

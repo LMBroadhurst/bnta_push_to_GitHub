@@ -25,10 +25,10 @@ public class Lion extends Animal {
     }
 
     public String introduce() {
-        return "Hello!";
+        return "Hi there, my name is " + this.name;
     }
 
     public void reproduce() {
-
+        System.out.println("Try for baby.");
     }
 }

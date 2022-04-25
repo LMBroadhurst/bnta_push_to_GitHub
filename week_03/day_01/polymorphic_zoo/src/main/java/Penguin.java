@@ -12,4 +12,9 @@ public class Penguin extends Animal {
         return "Hello there :)";
     }
 
+    public void reproduce() {
+        layEgg();
+        System.out.println("*Pushes out egg*");
+    }
+
 }
