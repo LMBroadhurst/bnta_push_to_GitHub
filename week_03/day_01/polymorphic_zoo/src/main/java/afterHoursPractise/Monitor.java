@@ -8,8 +8,13 @@ public class Monitor extends ComputerComponents {
     private boolean curved;
     private int brightness;
 
-    public Monitor(int price, String name, boolean newOrUsed) {
+    public Monitor(int price, String name, boolean newOrUsed, int size, boolean curved, int brightness) {
+
         super(price, name, newOrUsed);
+
+        this.size = size;
+        this.curved = curved;
+        this.brightness = brightness;
     }
 
     public int getSize() {
@@ -54,4 +59,6 @@ public class Monitor extends ComputerComponents {
             this.brightness -= increment;
         }
     }
+
+
 }
