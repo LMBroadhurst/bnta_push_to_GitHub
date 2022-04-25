@@ -1,14 +1,12 @@
-public class Animal {
+public abstract class Animal {
 
     private String name;
-    private String specie;
     private String diet;
     private int age;
 
-    public Animal(String name, int age, String specie, String diet) {
+    public Animal(String name, int age, String diet) {
         this.name = name;
         this.age = age;
-        this.specie = specie;
         this.diet = diet;
     }
 
@@ -21,14 +19,6 @@ public class Animal {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSpecie() {
-        return specie;
-    }
-
-    public void setSpecie(String specie) {
-        this.specie = specie;
     }
 
     public String getDiet() {
@@ -59,6 +49,10 @@ public class Animal {
 
     public String makeNoise() {
         return "Noot noot";
+    }
+
+    public String introduce() {
+        return "My name is " + this.name;
     }
 
 }
