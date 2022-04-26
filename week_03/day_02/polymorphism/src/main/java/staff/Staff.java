@@ -2,14 +2,13 @@ package staff;
 
 import animals.Animal;
 
-public class Staff {
+public abstract class Staff implements Commuter {
 
     private String name;
-    private String role;
 
-    public Staff(String name, String role) {
+
+    public Staff(String name) {
         this.name = name;
-        this.role = role;
     }
 
     // Getters & Setters
@@ -20,28 +19,6 @@ public class Staff {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    // Behaviours
-
-    public String cleanUp(){
-        return "I'm cleaning the place up.";
-    }
-
-    public void feedAnimal(Animal animal){
-        animal.eat();
-    }
-
-    public String sellTicket(){
-        return "Ticket sold!";
     }
 
 }

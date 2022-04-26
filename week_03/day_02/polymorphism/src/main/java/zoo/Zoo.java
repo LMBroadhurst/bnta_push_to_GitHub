@@ -6,7 +6,11 @@ import animals.Reptile;
 import enclosures.BirdHouse;
 import enclosures.MammalField;
 import enclosures.ReptileShed;
+import staff.Janitor;
 import staff.Staff;
+import staff.TicketSeller;
+
+import javax.tools.DiagnosticListener;
 
 public class Zoo {
 
@@ -16,10 +20,10 @@ public class Zoo {
     private MammalField mammalField;
     private ReptileShed reptileShed;
 
-    private Staff ticketSeller;
-    private Staff janitor;
+    private TicketSeller ticketSeller;
+    private Janitor janitor;
 
-    public Zoo(String name, int cash, BirdHouse birdHouse, MammalField mammalField, ReptileShed reptileShed, Staff ticketSeller, Staff janitor) {
+    public Zoo(String name, int cash, BirdHouse birdHouse, MammalField mammalField, ReptileShed reptileShed, TicketSeller ticketSeller, Janitor janitor) {
         this.name = name;
         this.cash = cash;
         this.birdHouse = birdHouse;
@@ -75,7 +79,7 @@ public class Zoo {
         return ticketSeller;
     }
 
-    public void setTicketSeller(Staff ticketSeller) {
+    public void setTicketSeller(TicketSeller ticketSeller) {
         this.ticketSeller = ticketSeller;
     }
 
@@ -83,7 +87,7 @@ public class Zoo {
         return janitor;
     }
 
-    public void setJanitor(Staff janitor) {
+    public void setJanitor(Janitor janitor) {
         this.janitor = janitor;
     }
 

@@ -1,11 +1,12 @@
 package enclosures;
 
 import animals.Reptile;
+import staff.Keeper;
 import staff.Staff;
 
 public class ReptileShed extends Enclosure{
 
-    public ReptileShed(String name, Staff keeper){
+    public ReptileShed(String name, Keeper keeper){
         super(name, keeper);
     }
 

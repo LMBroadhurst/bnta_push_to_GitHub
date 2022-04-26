@@ -1,6 +1,7 @@
 package enclosures;
 
 import animals.Animal;
+import staff.Keeper;
 import staff.Staff;
 
 import java.util.ArrayList;
@@ -10,9 +11,9 @@ public abstract class Enclosure {
     private String name;
     private boolean open;
     protected ArrayList<Animal> animals;
-    private Staff keeper;
+    private Keeper keeper;
 
-    public Enclosure(String name, Staff keeper){
+    public Enclosure(String name, Keeper keeper){
         this.name = name;
         this.open = false;
         this.animals = new ArrayList<>();
@@ -49,7 +50,7 @@ public abstract class Enclosure {
         return keeper;
     }
 
-    public void setKeeper(Staff keeper) {
+    public void setKeeper(Keeper keeper) {
         this.keeper = keeper;
     }
 
