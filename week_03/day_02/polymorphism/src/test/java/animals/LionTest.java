@@ -20,4 +20,9 @@ public class LionTest {
         assertEquals("Roar!", lion.makeNoise());
     }
 
+    @Test
+    void canMakeNoise__withArgument() {
+        assertEquals("Im going to say hello world", lion.makeNoise("hello world"));
+    }
+
 }

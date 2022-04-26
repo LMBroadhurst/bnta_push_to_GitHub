@@ -26,4 +26,13 @@ public class Lion extends Animal{
         return "Roar!";
     }
 
+    public String makeNoise(String phrase) {
+        return "Im going to say " + phrase;
+    }
+
+    public String makeNoise(int repeat) {
+        System.out.println("Roar! " + repeat + " times.");
+        return "roar";
+    }
+
 }
