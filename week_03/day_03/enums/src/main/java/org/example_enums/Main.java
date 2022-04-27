@@ -1,4 +1,4 @@
-package org.example;
+package org.example_enums;
 
 public class Main {
 

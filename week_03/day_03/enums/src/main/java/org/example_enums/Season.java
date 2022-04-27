@@ -1,4 +1,4 @@
-package org.example;
+package org.example_enums;
 
 public enum Season {
     SPRING, SUMMER, FALL, WINTER
