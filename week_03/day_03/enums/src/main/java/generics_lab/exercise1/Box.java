@@ -1,6 +1,6 @@
 package generics_lab.exercise1;
 
-public class Box<T> {
+public class Box <T> {
 
     private T t;
 
