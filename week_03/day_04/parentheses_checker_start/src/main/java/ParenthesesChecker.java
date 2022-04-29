@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 public class ParenthesesChecker {
 
@@ -10,8 +11,11 @@ public class ParenthesesChecker {
         boolean curlyBracketsMatched = false;
         boolean squareBracketsMatched = false;
         boolean arrowBracketsMatched = false;
+        boolean bracketsMatchedCorrectly = true;
 
         String[] splitTestString = testString.split("");
+
+        Stack<String> allBracketsStack = new Stack<>();
 
 //        Testing brackets
 
@@ -20,6 +24,7 @@ public class ParenthesesChecker {
         for (String character: splitTestString) {
             if (character.equals("(") || character.equals(")")) {
                 addBracketsHere.add(character);
+                allBracketsStack.push(character);
             }
         }
 
@@ -35,6 +40,7 @@ public class ParenthesesChecker {
         for (String character: splitTestString) {
             if (character.equals("[") || character.equals("]")) {
                 addCurlyBracketsHere.add(character);
+                allBracketsStack.push(character);
             }
         }
 
@@ -50,6 +56,7 @@ public class ParenthesesChecker {
         for (String character: splitTestString) {
             if (character.equals("{") || character.equals("}")) {
                 addSquareBracketsHere.add(character);
+                allBracketsStack.push(character);
             }
         }
 
@@ -64,6 +71,7 @@ public class ParenthesesChecker {
         for (String character: splitTestString) {
             if (character.equals("<") || character.equals(">")) {
                 addArrowBracketsHere.add(character);
+                allBracketsStack.push(character);
             }
         }
 
@@ -74,6 +82,25 @@ public class ParenthesesChecker {
 //        Combining statements
 
         if (squareBracketsMatched && curlyBracketsMatched && bracketsMatched && arrowBracketsMatched) {
+            allBracketsMatched = true;
+        }
+
+//        Last test to check if pairs are properly matched.
+
+        System.out.println(allBracketsStack);
+
+        if (allBracketsStack.size() > 3 && allBracketsStack.get(0) != (allBracketsStack.get(1))) {
+
+            if (allBracketsStack.get(1).equals(allBracketsStack.get(2))) {
+                allBracketsMatched = true;
+            } else {
+                allBracketsMatched = false;
+            }
+        }
+
+//        Final check to cover empty string.
+
+        if (allBracketsStack.isEmpty()) {
             allBracketsMatched = true;
         }
 
