@@ -1,5 +1,7 @@
 package org.examples.streamapi.model;
 
+import java.util.function.Predicate;
+
 public class Person {
     public enum Gender {
         MALE, FEMALE, NON_BINARY, UNKNOWN
@@ -48,4 +50,5 @@ public class Person {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
 }

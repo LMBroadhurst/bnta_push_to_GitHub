@@ -24,18 +24,22 @@ public class PredicateTest {
     @Test
     void filterUsingAPredicate() {
         // Use lambda expression and assign it to a variable
-        Predicate<Person> ageMoreThan30 = (person) -> {
-            return person.getAge() > 30;
-        };
 
-        Predicate<Person> ageLessThan20 = (person) -> {
-            return person.getAge() < 20;
-        };
+//        This is the same as...
+//        Vehicle vehicle = new Vehicle();
+
+
+        Predicate<Person> ageMoreThan30 = person -> person.getAge() > 30;
+
+        Predicate<Person> ageLessThan20 = person -> person.getAge() < 20;
+
+        Predicate<Person> isMale = new IsMalePersonPredicate();
+
 
         List<Person> peopleOlderThan30AndYoungerThen20 = PEOPLE
                 .stream()
                 // Time to use the predicates ?
-                .filter(ageLessThan20.or(ageMoreThan30))
+                .filter(ageLessThan20.or(ageMoreThan30).and(isMale))
                 .toList();
 
         assertEquals(5, peopleOlderThan30AndYoungerThen20.size());
@@ -49,4 +53,13 @@ public class PredicateTest {
 
              - extras: define some predicates in Person class (public static) and use them in the test
          */
+}
+
+class IsMalePersonPredicate implements Predicate<Person> {
+
+    @Override
+    public boolean test(Person person) {
+        return person.getGender() == Person.Gender.MALE;
+    }
+//    An implementation MUST implement the methods within the implementation classes.
 }
