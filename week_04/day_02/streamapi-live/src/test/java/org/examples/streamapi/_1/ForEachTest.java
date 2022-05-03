@@ -49,29 +49,6 @@ public class ForEachTest {
         PEOPLE.forEach(person -> System.out.println(person.getGender()));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Test
     void getFirstName() {
         PEOPLE.forEach(person -> System.out.println(person.getName()));

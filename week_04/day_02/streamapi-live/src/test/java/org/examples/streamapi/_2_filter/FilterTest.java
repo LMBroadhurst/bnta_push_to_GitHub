@@ -44,4 +44,47 @@ public class FilterTest {
      - filter by: Gender: non-binary and  age > 30
      - filter by lastName starts with "B" and age > 50
  */
+
+    @Test
+    void filteredByAge() {
+        List<Person> filteredAge = PEOPLE
+                .stream()
+                .filter(person -> person.getAge() < 20 || person.getAge() > 30)
+                .toList();
+
+        assertEquals(11, filteredAge.size());
+    }
+
+    @Test
+    void filterZAnd20() {
+        List<Person> filteredLetterAge = PEOPLE
+                .stream()
+                .filter(person -> person.getAge() < 20)
+                .filter(person -> person.getName().charAt(0) == ('Z'))
+                .toList();
+
+        assertEquals(1, filteredLetterAge.size());
+    }
+
+    @Test
+    void nonBinaryAndAge() {
+        List<Person> nonBinAndAge = PEOPLE
+                .stream()
+                .filter(person -> person.getGender() == Person.Gender.NON_BINARY)
+                .filter(person -> person.getAge() > 30)
+                .toList();
+
+        assertEquals(2, nonBinAndAge.size());
+    }
+
+    @Test
+    void lastNameBOver50() {
+        List<Person> lastNameBandAge = PEOPLE
+                .stream()
+                .filter(person -> person.getLastName().startsWith("B"))
+                .filter(person -> person.getAge() > 50)
+                .toList();
+
+        assertEquals(1, lastNameBandAge.size());
+    }
 }

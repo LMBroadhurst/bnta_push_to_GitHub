@@ -35,7 +35,7 @@ public class PredicateTest {
         List<Person> peopleOlderThan30AndYoungerThen20 = PEOPLE
                 .stream()
                 // Time to use the predicates ?
-                .filter(ageLessThan20.or(ageLessThan20))
+                .filter(ageLessThan20.or(ageMoreThan30))
                 .toList();
 
         assertEquals(5, peopleOlderThan30AndYoungerThen20.size());
