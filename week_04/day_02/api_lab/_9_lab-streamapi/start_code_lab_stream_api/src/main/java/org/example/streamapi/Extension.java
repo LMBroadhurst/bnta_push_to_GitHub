@@ -4,6 +4,7 @@ import org.example.streamapi.model.Bodybuilder;
 import org.example.streamapi.model.Friend;
 import org.example.streamapi.model.User;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class Extension {
@@ -50,8 +51,17 @@ public class Extension {
         - then who is younger,
         - then name alphabetically.
      */
+
+    private Comparator<Bodybuilder> builderByNameLiftAge =
+            Comparator.comparingInt(Bodybuilder::getLift).reversed()
+                    .thenComparingInt(Bodybuilder::getAge)
+                    .thenComparing(Bodybuilder::getName);
+
     public List<String> sortBodybuilders(List<Bodybuilder> bodybuilders) {
-        // Implement me :)
+        return bodybuilders.stream()
+                .sorted(builderByNameLiftAge)
+                .map(bodybuilder -> bodybuilder.getName())
+                .toList();
         return null;
     }
 
