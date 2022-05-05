@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class MVP {
 
@@ -42,8 +43,17 @@ public class MVP {
         Given a String, return a List<String>, all caps.
      */
     public List<String> splitToAllCapsList(String input) {
-        // Implement me :)
-        return null;
+        String[] splitInput = input.split("");
+
+//        List<String> allCaps = Arrays.asList(splitInput);
+//        List<String> output =
+
+        List<String> output = List.of(splitInput)
+                        .forEach(
+                        String::toUpperCase
+                        );
+
+        return List.of(splitInput);
     }
 
 
@@ -57,8 +67,19 @@ public class MVP {
      - return sorted List<String>, all caps.
     */
     public List<String> filterByFirstLetterAndOrder(List<String> list, String letter) {
-        // Implement me :)
-        return null;
+
+        Predicate<String> filterByFirstLetter = string -> string.startsWith(letter);
+//
+//        list.forEach(
+//                (letter) -> {}
+//        );
+
+//        List<String> filteredList = list
+//                .stream()
+//                .filter(filterByFirstLetter)
+//                .forEach(string -> string.toUpperCase());
+
+        return list;
     }
 
     /*
