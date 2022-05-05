@@ -1,6 +1,8 @@
 package org.example.streamapi;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class MVP {
@@ -23,31 +25,17 @@ public class MVP {
     }
 
 
-
-
-
-
-
-
-
     /*
         Given an int [], double the value of each int and return an int [].
     */
     public int[] doubleInts(int[] numbers) {
-        List<Integer> doubledArray = numbers
-                .stream()
-                .filter
 
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] *= 2;
+        }
 
-        return null;
+        return numbers;
     }
-
-
-
-
-
-
-
 
 
     /*
@@ -57,6 +45,11 @@ public class MVP {
         // Implement me :)
         return null;
     }
+
+
+
+
+
 
     /*
     Given a list of animals:

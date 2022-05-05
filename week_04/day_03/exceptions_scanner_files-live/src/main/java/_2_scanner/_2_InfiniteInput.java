@@ -24,6 +24,7 @@ public class _2_InfiniteInput {
                 }
             } catch (Exception e) {
                 System.out.println("Invalid value!");
+                scanner.next();
             }
         }
 

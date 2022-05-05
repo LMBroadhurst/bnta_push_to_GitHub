@@ -1,5 +1,6 @@
 package _2_scanner;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class _1_OneTimeInput {
@@ -12,10 +13,21 @@ public class _1_OneTimeInput {
         String name = in.next();
         System.out.println("Hello " + name + "!");
 
+
         System.out.print("And your age?: ");
         // Integer...
-        int age = in.nextInt();
+        int age = 0;
+        String msg;
+
+        try {
+            age = in.nextInt();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
         System.out.println(age + "! You look younger.");
+
 
         System.out.print("Write anything: ");
         // Long line as a String object;
