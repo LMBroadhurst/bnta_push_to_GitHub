@@ -1,10 +1,11 @@
 package org.example.streamapi;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toList;
 
 public class MVP {
 
@@ -42,18 +43,12 @@ public class MVP {
     /*
         Given a String, return a List<String>, all caps.
      */
+
     public List<String> splitToAllCapsList(String input) {
-        String[] splitInput = input.split("");
 
-//        List<String> allCaps = Arrays.asList(splitInput);
-//        List<String> output =
+        Predicate<String> toCaps = letter -> letter.toUpperCase();
 
-        List<String> output = List.of(splitInput)
-                        .forEach(
-                        String::toUpperCase
-                        );
-
-        return List.of(splitInput);
+        return;
     }
 
 
