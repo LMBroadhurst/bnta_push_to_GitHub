@@ -1,0 +1,692 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;\f1\fnil\fcharset77 ZapfDingbatsITC;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f0\fs26 \cf0 football=# SELECT * FROM divisions;\
+ id | code |         name          |   country   \
+----+------+-----------------------+-------------\
+  1 | B1   | Division 1A           | Belgium\
+  2 | D1   | Bundesliga            | Deutschland\
+  3 | D2   | 2. Bundesliga         | Deutschland\
+  4 | E0   | Premier League        | England\
+  5 | E1   | EFL Championship      | England\
+  6 | E2   | EFL League One        | England\
+  7 | E3   | EFL League Two        | England\
+  8 | EC   | National League       | England\
+  9 | F1   | Ligue 1               | France\
+ 10 | F2   | Ligue 2               | France\
+ 11 | G1   | Superleague           | Greece\
+ 12 | I1   | Seria A               | Italy\
+ 13 | I2   | Seria B               | Italy\
+ 14 | N1   | Eredivisie            | Netherlands\
+ 15 | P1   | Liga NOS              | Portugal\
+ 16 | SC0  | Scottish Premiership  | Scotland\
+ 17 | SC1  | Scottish Championship | Scotland\
+ 18 | SC2  | Scottish League One   | Scotland\
+ 19 | SP1  | LaLiga                | Spain\
+ 20 | SP2  | LaLiga 2              | Spain\
+ 21 | T1   | S\'fcper Lig             | Turkey\
+(21 rows)\
+\
+football=# SELECT * FROM matches WHERE season = 2021;\
+football=# SELECT * FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona'\
+football-# ;\
+football=# SELECT name FROM divisions WHERE country = 'Scotland';\
+         name          \
+-----------------------\
+ Scottish Premiership\
+ Scottish Championship\
+ Scottish League One\
+(3 rows)\
+\
+football=# SELECT code, name FROM divisions WHERE country = 'Deutschland';\
+ code |     name      \
+------+---------------\
+ D1   | Bundesliga\
+ D2   | 2. Bundesliga\
+(2 rows)\
+\
+football=# SELECT COUNT(*) FROM matches WHERE code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');\
+ERROR:  column "code" does not exist\
+LINE 1: SELECT COUNT(*) FROM matches WHERE code = 'D1' AND (hometeam...\
+                                           ^\
+football=# SELECT COUNT(*) FROM matches WHERE division_code = 'D1' AND (hometeam = 'Freiburg' OR awayteam = 'Freiburg');\
+ count \
+-------\
+   374\
+(1 row)\
+\
+football=# SELECT DISTINCT hometeam FROM matches WHERE LOWER(hometeam) LIKE LOWER('%city%');\
+    hometeam    \
+----------------\
+ Bath City\
+ Man City\
+ Edinburgh City\
+ Bristol City\
+(4 rows)\
+\
+football=# SELECT DISTINCT hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+football=# SELECT DISTINCT COUNT(*) hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+ hometeam \
+----------\
+    11959\
+(1 row)\
+\
+football=# SELECT COUNT(*) DISTINCT hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+ERROR:  syntax error at or near "hometeam"\
+LINE 1: SELECT COUNT(*) DISTINCT hometeam FROM matches WHERE divisio...\
+                                 ^\
+football=# SELECT DISTINCT COUNT(*) hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+ hometeam \
+----------\
+    11959\
+(1 row)\
+\
+football=# SELECT DISTINCT COUNT(*) hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+ hometeam \
+----------\
+    11959\
+(1 row)\
+\
+football=# SELECT DISTINCT hometeam FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+football=# SELECT COUNT(DISTINCT hometeam) FROM matches WHERE division_code = 'F1' OR division_code = 'F2';\
+ count \
+-------\
+    61\
+(1 row)\
+\
+football=# SELECT hometeam, awayteam, season FROM matches WHERE (hometeam = 'Huddersfield' AND awayteam = 'Swansea');\
+   hometeam   | awayteam | season \
+--------------+----------+--------\
+ Huddersfield | Swansea  |   2021\
+ Huddersfield | Swansea  |   2020\
+ Huddersfield | Swansea  |   2018\
+ Huddersfield | Swansea  |   2008\
+ Huddersfield | Swansea  |   2007\
+ Huddersfield | Swansea  |   2006\
+(6 rows)\
+\
+football=# SELECT COUNT(ftr) FROM matches WHERE (ftr = 'D) AND (season > 2009 AND season < 2016);\
+football'# q\
+football'# \\q\
+Use control-D to quit.\
+football'# ^D\\q\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 \uc0\u10140 
+\f2\b   push_to_GitHub
+\f0\b0  
+\f2\b git:(main) 
+\f1\b0 \uc0\u10007 
+\f0  psql\
+psql (14.2)\
+Type "help" for help.\
+\
+lewis=# \\c football\
+You are now connected to database "football" as user "lewis".\
+football=# SELECT COUNT(ftr) FROM matches WHERE ((ftr = 'D) AND (season > 2009 AND season < 2016));\
+football'# \
+football=# SELECT COUNT(ftr) FROM matches WHERE ((ftr = 'D) AND (season > 2009 AND season < 2016));\
+football'# SELECT COUNT(ftr) FROM matches WHERE ((ftr = 'D) AND (season > 2009 AND season < 2016));\
+ERROR:  syntax error at or near "D"\
+LINE 2: SELECT COUNT(ftr) FROM matches WHERE ((ftr = 'D) AND (season...\
+                                                      ^\
+football=# SELECT COUNT(ftr) FROM matches WHERE (ftr = 'D') AND (season > 2009 AND season < 2016);\
+ count \
+-------\
+ 12390\
+(1 row)\
+\
+football=# SELECT * FROM matches WHERE (division_code = E0) ORDER BY (fthg + ftag);\
+ERROR:  column "e0" does not exist\
+LINE 1: SELECT * FROM matches WHERE (division_code = E0) ORDER BY (f...\
+                                                     ^\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag);\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC;\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC ORDER BY fthg DESC;\
+ERROR:  syntax error at or near "ORDER"\
+LINE 1: ...division_code = 'E0') ORDER BY (fthg + ftag) DESC ORDER BY f...\
+                                                             ^\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC, fthg;\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC, fthg;\
+football=# SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC, fthg DESC;\
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0');\
+ count \
+-------\
+  6080\
+(1 row)\
+\
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0') AND (season = 2021);\
+ count \
+-------\
+   380\
+(1 row)\
+\
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0') AND (season = 2020);\
+ count \
+-------\
+   380\
+(1 row)\
+\
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0') AND (season = 2019);\
+ count \
+-------\
+   380\
+(1 row)\
+\
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0') AND (season = 2018);\
+ count \
+-------\
+   380\
+(1 row)\
+\
+football=# SELECT fthg, ftag FROM matches WHERE ((division_code = 'E0') GROUP BY season;\
+football(# \
+football=# SELECT COUNT(fthg + ftag) FROM matches WHERE (division_code = 'E0') GROUP BY season;\
+ count \
+-------\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+   380\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag) FROM matches WHERE (division_code = 'E0') GROUP BY season;\
+ sum  \
+------\
+ 1063\
+ 1024\
+ 1002\
+  975\
+ 1053\
+ 1052\
+  931\
+ 1072\
+  944\
+ 1034\
+ 1063\
+ 1064\
+ 1026\
+ 1066\
+  942\
+ 1018\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'E0') GROUP BY season;\
+ sum  | season \
+------+--------\
+ 1063 |   2013\
+ 1024 |   2021\
+ 1002 |   2008\
+  975 |   2015\
+ 1053 |   2010\
+ 1052 |   2014\
+  931 |   2007\
+ 1072 |   2019\
+  944 |   2006\
+ 1034 |   2020\
+ 1063 |   2011\
+ 1064 |   2017\
+ 1026 |   2016\
+ 1066 |   2012\
+  942 |   2009\
+ 1018 |   2018\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'E0') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  931 |   2007\
+  942 |   2009\
+  944 |   2006\
+  975 |   2015\
+ 1002 |   2008\
+ 1018 |   2018\
+ 1024 |   2021\
+ 1026 |   2016\
+ 1034 |   2020\
+ 1052 |   2014\
+ 1053 |   2010\
+ 1063 |   2013\
+ 1063 |   2011\
+ 1064 |   2017\
+ 1066 |   2012\
+ 1072 |   2019\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'E1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+ 1274 |   2021\
+ 1337 |   2016\
+ 1341 |   2006\
+ 1350 |   2009\
+ 1394 |   2008\
+ 1409 |   2018\
+ 1419 |   2012\
+ 1425 |   2010\
+ 1434 |   2014\
+ 1439 |   2007\
+ 1441 |   2017\
+ 1457 |   2020\
+ 1473 |   2019\
+ 1474 |   2015\
+ 1494 |   2013\
+ 1510 |   2011\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'E2') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+ 1044 |   2020\
+ 1335 |   2008\
+ 1366 |   2013\
+ 1384 |   2006\
+ 1386 |   2007\
+ 1401 |   2018\
+ 1417 |   2017\
+ 1447 |   2021\
+ 1457 |   2016\
+ 1459 |   2010\
+ 1462 |   2019\
+ 1464 |   2015\
+ 1473 |   2014\
+ 1489 |   2012\
+ 1509 |   2011\
+ 1516 |   2009\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'E3') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+ 1108 |   2020\
+ 1291 |   2014\
+ 1303 |   2021\
+ 1317 |   2015\
+ 1372 |   2007\
+ 1374 |   2009\
+ 1392 |   2006\
+ 1409 |   2019\
+ 1415 |   2013\
+ 1427 |   2008\
+ 1446 |   2010\
+ 1458 |   2018\
+ 1458 |   2012\
+ 1465 |   2017\
+ 1472 |   2016\
+ 1506 |   2011\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'EC') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+ 1201 |   2006\
+ 1215 |   2020\
+ 1254 |   2021\
+ 1293 |   2010\
+ 1375 |   2019\
+ 1410 |   2009\
+ 1413 |   2007\
+ 1430 |   2018\
+ 1460 |   2016\
+ 1486 |   2015\
+ 1491 |   2014\
+ 1504 |   2017\
+ 1549 |   2011\
+ 1562 |   2008\
+ 1574 |   2012\
+ 1592 |   2013\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'F1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  704 |   2020\
+  811 |   2006\
+  855 |   2007\
+  858 |   2009\
+  868 |   2008\
+  890 |   2011\
+  916 |   2010\
+  933 |   2014\
+  947 |   2015\
+  956 |   2012\
+  960 |   2016\
+  967 |   2013\
+  972 |   2019\
+  994 |   2017\
+ 1033 |   2018\
+ 1049 |   2021\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'F2') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  621 |   2020\
+  818 |   2006\
+  834 |   2019\
+  855 |   2015\
+  867 |   2008\
+  872 |   2012\
+  875 |   2016\
+  883 |   2009\
+  886 |   2010\
+  891 |   2011\
+  901 |   2007\
+  910 |   2021\
+  917 |   2013\
+  939 |   2014\
+  943 |   2017\
+ 1035 |   2018\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'B1') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 565 |   2010\
+ 635 |   2011\
+ 646 |   2014\
+ 655 |   2020\
+ 658 |   2017\
+ 668 |   2015\
+ 687 |   2018\
+ 691 |   2012\
+ 694 |   2016\
+ 696 |   2019\
+ 703 |   2013\
+ 769 |   2006\
+ 795 |   2008\
+ 852 |   2007\
+ 856 |   2009\
+ 914 |   2021\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'D1') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 837 |   2007\
+ 843 |   2015\
+ 855 |   2018\
+ 860 |   2008\
+ 861 |   2006\
+ 866 |   2010\
+ 866 |   2016\
+ 875 |   2012\
+ 877 |   2017\
+ 894 |   2009\
+ 894 |   2011\
+ 898 |   2013\
+ 928 |   2021\
+ 967 |   2014\
+ 973 |   2019\
+ 982 |   2020\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'D2') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 761 |   2017\
+ 763 |   2015\
+ 785 |   2014\
+ 790 |   2013\
+ 794 |   2006\
+ 804 |   2007\
+ 808 |   2016\
+ 809 |   2010\
+ 835 |   2011\
+ 843 |   2018\
+ 852 |   2009\
+ 855 |   2012\
+ 872 |   2008\
+ 881 |   2020\
+ 904 |   2019\
+ 908 |   2021\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'G1') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 512 |   2013\
+ 519 |   2009\
+ 528 |   2011\
+ 529 |   2021\
+ 530 |   2018\
+ 535 |   2012\
+ 543 |   2016\
+ 546 |   2019\
+ 556 |   2017\
+ 559 |   2006\
+ 559 |   2007\
+ 559 |   2008\
+ 561 |   2010\
+ 567 |   2020\
+ 759 |   2015\
+ 776 |   2014\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'I1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  955 |   2011\
+  969 |   2007\
+  970 |   2008\
+  972 |   2012\
+  979 |   2016\
+  988 |   2009\
+  991 |   2006\
+  992 |   2010\
+ 1003 |   2013\
+ 1017 |   2018\
+ 1019 |   2019\
+ 1024 |   2015\
+ 1035 |   2014\
+ 1123 |   2017\
+ 1154 |   2020\
+ 1160 |   2021\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'I2') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  887 |   2019\
+  913 |   2021\
+  955 |   2020\
+ 1021 |   2017\
+ 1044 |   2006\
+ 1061 |   2007\
+ 1074 |   2015\
+ 1077 |   2011\
+ 1099 |   2014\
+ 1100 |   2009\
+ 1123 |   2016\
+ 1146 |   2010\
+ 1164 |   2012\
+ 1175 |   2013\
+ 1182 |   2018\
+ 1189 |   2008\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'N1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  715 |   2020\
+  870 |   2009\
+  884 |   2017\
+  892 |   2010\
+  912 |   2016\
+  912 |   2006\
+  915 |   2007\
+  920 |   2021\
+  942 |   2015\
+  956 |   2008\
+  960 |   2018\
+  964 |   2013\
+  978 |   2014\
+  987 |   2011\
+  997 |   2012\
+ 1061 |   2019\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'P1') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 552 |   2009\
+ 553 |   2008\
+ 554 |   2007\
+ 569 |   2014\
+ 584 |   2011\
+ 601 |   2010\
+ 634 |   2012\
+ 667 |   2013\
+ 681 |   2006\
+ 728 |   2017\
+ 739 |   2021\
+ 763 |   2020\
+ 763 |   2015\
+ 826 |   2018\
+ 826 |   2019\
+ 831 |   2016\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'SC0') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 490 |   2020\
+ 548 |   2009\
+ 552 |   2021\
+ 560 |   2007\
+ 578 |   2019\
+ 584 |   2011\
+ 585 |   2010\
+ 587 |   2015\
+ 594 |   2018\
+ 601 |   2012\
+ 610 |   2008\
+ 623 |   2013\
+ 626 |   2014\
+ 628 |   2017\
+ 641 |   2006\
+ 650 |   2016\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'SC1') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 364 |   2020\
+ 380 |   2021\
+ 439 |   2019\
+ 444 |   2009\
+ 457 |   2006\
+ 462 |   2010\
+ 464 |   2011\
+ 469 |   2017\
+ 476 |   2007\
+ 479 |   2008\
+ 482 |   2018\
+ 483 |   2016\
+ 507 |   2012\
+ 514 |   2014\
+ 525 |   2015\
+ 568 |   2013\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'SC2') GROUP BY season ORDER BY SUM;\
+ sum | season \
+-----+--------\
+ 278 |   2021\
+ 387 |   2020\
+ 483 |   2010\
+ 491 |   2009\
+ 507 |   2017\
+ 513 |   2015\
+ 523 |   2019\
+ 538 |   2016\
+ 539 |   2006\
+ 548 |   2007\
+ 573 |   2008\
+ 577 |   2011\
+ 577 |   2012\
+ 578 |   2018\
+ 590 |   2013\
+ 595 |   2014\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'SP1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  936 |   2006\
+  942 |   2007\
+  942 |   2020\
+  953 |   2021\
+  983 |   2019\
+ 1009 |   2015\
+ 1021 |   2008\
+ 1024 |   2018\
+ 1031 |   2010\
+ 1042 |   2011\
+ 1043 |   2016\
+ 1045 |   2014\
+ 1050 |   2012\
+ 1091 |   2013\
+ 1101 |   2009\
+ 1118 |   2017\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'SP2') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  899 |   2021\
+ 1006 |   2019\
+ 1041 |   2017\
+ 1043 |   2016\
+ 1057 |   2020\
+ 1061 |   2006\
+ 1066 |   2018\
+ 1072 |   2008\
+ 1078 |   2014\
+ 1114 |   2010\
+ 1133 |   2007\
+ 1136 |   2015\
+ 1160 |   2009\
+ 1203 |   2013\
+ 1218 |   2012\
+ 1220 |   2011\
+(16 rows)\
+\
+football=# SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'T1') GROUP BY season ORDER BY SUM;\
+ sum  | season \
+------+--------\
+  662 |   2010\
+  736 |   2007\
+  786 |   2008\
+  787 |   2009\
+  789 |   2012\
+  809 |   2014\
+  817 |   2013\
+  822 |   2019\
+  827 |   2016\
+  828 |   2017\
+  838 |   2011\
+  849 |   2006\
+  873 |   2015\
+  875 |   2020\
+  906 |   2018\
+ 1136 |   2021\
+(16 rows)}
