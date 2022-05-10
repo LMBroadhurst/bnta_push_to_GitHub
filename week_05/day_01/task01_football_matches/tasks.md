@@ -11,7 +11,7 @@ SELECT * FROM matches WHERE season = 2021;
 2) Find all the matches featuring Barcelona.
 
 ```sql
-SELECT * FROM matches WHERE hometeam = 'Barcelona' OR awayteam = 'Barcelona';
+SELECT * FROM matches WHERE 'Barcelona' IN (hometeam, awayteam);
 ```
 
 3) What are the names of the Scottish divisions included?
@@ -57,7 +57,7 @@ football=# SELECT hometeam, awayteam, season FROM matches WHERE (hometeam = 'Hud
 8) How many draws were there in the Eredivisie between 2010 and 2015?
 
 ```sql
-SELECT COUNT(ftr) FROM matches WHERE (ftr = 'D') AND (season > 2009 AND season < 2016);
+SELECT COUNT(ftr) FROM matches WHERE (ftr = 'D') AND (season > 2009 AND season < 2016) AND division_code = 'N1';
 ```
 
 9) Select the matches played in the Premier League in order of total goals scored from highest to lowest. Where there is a tie the match with more home goals should come first.
@@ -69,7 +69,7 @@ SELECT * FROM matches WHERE (division_code = 'E0') ORDER BY (fthg + ftag) DESC, 
 10) In which division and which season were the most goals scored?
 
 ```sql
-SELECT SUM(fthg + ftag), season FROM matches WHERE (division_code = 'EC') GROUP BY season ORDER BY SUM;
+SELECT SUM(fthg + ftag), season, division_code FROM matches GROUP BY division_code, season ORDER BY SUM DESC LIMIT 1;
 -- English National League: 1592, 2013
 -- Division which scored the most goals
 
