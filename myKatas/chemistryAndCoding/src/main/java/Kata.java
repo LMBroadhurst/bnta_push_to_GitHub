@@ -2,20 +2,18 @@ import java.util.Locale;
 
 public class Kata {
 
-    public static boolean chemistryAndCoding(String solvent, String substrate) {
+    public static boolean chemistryAndCoding(String solvent, String solute) {
 
-        boolean willItDissolve;
-        solvent = solvent.toLowerCase();
-        substrate = substrate.toLowerCase();
+            boolean willItDissolve;
+            solvent = solvent.toLowerCase();
+            solute = solute.toLowerCase();
 
-        if (solvent.equals(substrate)) {
-            willItDissolve = true;
-        } else {
-            willItDissolve = false;
-        }
+            if (solvent.equals(solute)) {
+                willItDissolve = true;
+            } else {
+                willItDissolve = false;
+            }
 
-        return willItDissolve;
-
+            return willItDissolve;
     }
-
 }
