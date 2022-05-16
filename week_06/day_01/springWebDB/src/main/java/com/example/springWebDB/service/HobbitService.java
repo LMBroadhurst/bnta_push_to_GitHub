@@ -17,4 +17,7 @@ public class HobbitService {
         return hobbitRepository.findAll();
     }
 
+    public Hobbit save(Hobbit hobbit) {
+        return hobbitRepository.save(hobbit);
+    }
 }
