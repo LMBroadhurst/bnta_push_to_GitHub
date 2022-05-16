@@ -16,4 +16,8 @@ public class ConnectService {
     public List<Connect> getAll() {
         return connectRepository.findAll();
     }
+
+    public Connect save(Connect connect) {
+        return connectRepository.save(connect);
+    }
 }
