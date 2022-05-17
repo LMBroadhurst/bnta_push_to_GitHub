@@ -7,10 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+@Entity
 public class Estate {
 
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
@@ -19,7 +20,8 @@ public class Estate {
 
     private String country;
 
-
+    @JsonIgnoreProperties({"estate"})
+    @OneToMany(mappedBy = "estate", cascade = CascadeType.ALL)
     private List<Chocolate> chocolates;
 
     public Estate(String name, String country) {
@@ -62,4 +64,5 @@ public class Estate {
     public void setChocolates(List<Chocolate> chocolates) {
         this.chocolates = chocolates;
     }
+
 }

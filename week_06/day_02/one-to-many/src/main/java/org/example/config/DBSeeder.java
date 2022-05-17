@@ -19,7 +19,7 @@ import java.util.List;
     @Configuration
     public class DBSeeder implements ApplicationRunner {
         /*
-           Spring 'glues' DBSeder with the implementation of CustomerRepository
+           Spring 'glues' DBSeeder with the implementation of CustomerRepository
            provided by the Spring Data Jpa project
         */
         @Autowired
