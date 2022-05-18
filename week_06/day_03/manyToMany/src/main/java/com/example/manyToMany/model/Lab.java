@@ -15,7 +15,7 @@ public class Lab {
     private String description;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "enrolments", joinColumns = @JoinColumn(name = "student_id"))
+    @JoinTable(name = "enrolments", joinColumns = @JoinColumn(name = "student_id"), inverseJoinColumns = @JoinColumn(name = "lab_id"))
     @JsonIgnoreProperties(value = {"labs"})
     private Set<Student> students;
     public Lab() {

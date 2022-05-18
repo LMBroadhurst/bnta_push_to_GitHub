@@ -18,7 +18,7 @@ public class StudentController {
         this.studentRepository = studentRepository;
     }
 
-    @GetMapping("/students")
+    @GetMapping("/students_1")
     public ResponseEntity<List<Student>> getAllStudents() {
 
         List<Student> students = studentRepository.findAll();
@@ -28,8 +28,8 @@ public class StudentController {
                 .body(students);
     }
 
-    @GetMapping("/students")
-    public ResponseEntity<List<Student>> getAllLabs(@RequestParam(required = false, defaultValue = "false")
+    @GetMapping("/students_2")
+    public ResponseEntity<List<Student>> getAllStudents(@RequestParam(required = false, defaultValue = "false")
     boolean orderedByLastName) {
 
         List<Student> students;

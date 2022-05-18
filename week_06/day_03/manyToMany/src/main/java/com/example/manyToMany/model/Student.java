@@ -16,7 +16,7 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "students")
     @JsonIgnoreProperties(value = {"students"})
     private Set<Lab> labs;
     public Student() {
