@@ -32,11 +32,12 @@ public class MVP {
     */
     public int[] doubleInts(int[] numbers) {
 
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] *= 2;
-        }
+        int[] output = Arrays.stream(numbers)
+                .asLongStream()
+                .map(() -> {
+                    n * 2
+                });
 
-        return numbers;
     }
 
 

@@ -2,6 +2,7 @@ package com.example.manyToMany.controller;
 
 import com.example.manyToMany.model.Student;
 import com.example.manyToMany.repository.StudentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +13,24 @@ public class StudentController {
 
     private StudentRepository studentRepository;
 
-    public StudentController() {}
+//    public StudentController() {}
 
     public StudentController(StudentRepository studentRepository) {
         this.studentRepository = studentRepository;
     }
 
+    @GetMapping("/students_0")
+    public List<Student> getAllStudents() {
+        return studentRepository.findAll();
+    }
+
     @GetMapping("/students_1")
-    public ResponseEntity<List<Student>> getAllStudents() {
+    public ResponseEntity<List<Student>> getAllStudents__withResponseEntity() {
 
         List<Student> students = studentRepository.findAll();
 
         return ResponseEntity
-                .ok()
+                .status(999)
                 .body(students);
     }
 
@@ -52,3 +58,4 @@ public class StudentController {
     }
 
 }
+
