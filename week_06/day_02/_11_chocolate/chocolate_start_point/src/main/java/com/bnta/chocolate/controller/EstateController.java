@@ -21,6 +21,8 @@ public class EstateController {
         return estateService.getAll();
     }
 
+    @GetMapping("")
+
     @PostMapping("/estates")
     public Estate post(@RequestBody Estate estate) {
         return estateService.save(estate);
