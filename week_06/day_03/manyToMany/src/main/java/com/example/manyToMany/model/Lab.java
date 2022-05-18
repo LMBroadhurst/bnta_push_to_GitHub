@@ -1,11 +1,22 @@
 package com.example.manyToMany.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
 public class Lab {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "enrolments", joinColumns = @JoinColumn(name = "student_id"))
+    @JsonIgnoreProperties(value = {"labs"})
     private Set<Student> students;
     public Lab() {
     }

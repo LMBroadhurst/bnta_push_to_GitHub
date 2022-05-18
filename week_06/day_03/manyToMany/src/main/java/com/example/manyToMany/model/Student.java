@@ -1,9 +1,23 @@
 package com.example.manyToMany.model;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.Set;
+
+@Entity
 public class Student {
+
+    @Id
+    @GeneratedValue
     private Long id;
     private String firstName;
     private String lastName;
+
+    @ManyToMany
+    @JsonIgnoreProperties(value = {"students"})
     private Set<Lab> labs;
     public Student() {
     }
