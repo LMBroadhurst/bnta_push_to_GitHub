@@ -17,7 +17,7 @@ public class Pokemon {
     private int level;
     private String favourite_move;
 
-    @ManyToMany(mappedBy = "pokemons")
+    @ManyToMany(mappedBy = "pokemons", cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "pokemons")
     private Set<Trainer> trainers;
 

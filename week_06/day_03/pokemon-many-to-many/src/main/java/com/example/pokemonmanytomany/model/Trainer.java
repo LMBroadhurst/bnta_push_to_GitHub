@@ -16,7 +16,7 @@ public class Trainer {
     private int age;
     private String favourite_pokemon;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "relationships",
             joinColumns = @JoinColumn(name = "trainer_id"),
             inverseJoinColumns = @JoinColumn(name = "pokemon_id"))

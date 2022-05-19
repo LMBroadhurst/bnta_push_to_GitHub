@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 
-    @Query(value = "SELECT * FROM pokemon WHERE id = ?",
+     @Query(value = "SELECT * FROM pokemon WHERE id = ?",
             nativeQuery = true)
     Pokemon getSpecificPokemon(int id);
 

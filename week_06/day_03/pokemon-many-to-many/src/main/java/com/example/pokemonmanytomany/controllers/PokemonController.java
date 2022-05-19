@@ -53,9 +53,9 @@ public class PokemonController {
 
 //    Delete
 
-    @DeleteMapping("/delete_pokemon_from_trainer/{pokemon_JSON}")
-    void deleteSpecificPokemon(@PathVariable("pokemon_JSON") Pokemon pokemon) {
-        pokemonRepository.delete(pokemon);
+    @DeleteMapping("/delete_pokemon/{id}")
+    void deleteSpecificPokemon(@PathVariable("id") Long id) {
+        pokemonRepository.deleteById(id);
     }
 
 }
