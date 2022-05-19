@@ -18,12 +18,9 @@ public class MVP {
 //        Given a List<Integers>, return a List<Integer> with event numbers.
 
     public List<Integer> returnEvenNumbers(List<Integer> numbers) {
-        List<Integer> evenNumbers = numbers
-                .stream()
+        return numbers.stream()
                 .filter(number -> number % 2 == 0)
                 .toList();
-
-        return evenNumbers;
     }
 
 
@@ -32,14 +29,11 @@ public class MVP {
     */
     public int[] doubleInts(int[] numbers) {
 
-        int[] output = Arrays.stream(numbers)
-                .asLongStream()
-                .map(() -> {
-                    n * 2
-                });
+        return Arrays.stream(numbers)
+                .map((n) -> n * 2)
+                .toArray();
 
     }
-
 
     /*
         Given a String, return a List<String>, all caps.
@@ -47,14 +41,10 @@ public class MVP {
 
     public List<String> splitToAllCapsList(String input) {
 
-        Predicate<String> toCaps = letter -> letter.toUpperCase();
+        List<String> splitInput = List.of(input.split(""));
 
-        return;
+        return splitInput.stream().map(String::toUpperCase).toList();
     }
-
-
-
-
 
 
     /*
@@ -64,18 +54,11 @@ public class MVP {
     */
     public List<String> filterByFirstLetterAndOrder(List<String> list, String letter) {
 
-        Predicate<String> filterByFirstLetter = string -> string.startsWith(letter);
-//
-//        list.forEach(
-//                (letter) -> {}
-//        );
-
-//        List<String> filteredList = list
-//                .stream()
-//                .filter(filterByFirstLetter)
-//                .forEach(string -> string.toUpperCase());
-
-        return list;
+        return list.stream()
+                .filter(s -> s.startsWith(letter))
+                .map(String::toUpperCase)
+                .sorted()
+                .collect(Collectors.toList());
     }
 
     /*
@@ -84,7 +67,9 @@ public class MVP {
          - start with a given letter.
     */
     public List<String> filterWords(List<String> words, int maxLength, String firstLetter) {
-        // Implement me :)
-        return null;
+        return words.stream()
+                .filter(s -> s.length() < maxLength)
+                .filter(s -> s.startsWith(firstLetter))
+                .collect(Collectors.toList());
     }
 }

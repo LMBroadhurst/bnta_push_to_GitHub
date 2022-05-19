@@ -6,6 +6,7 @@ import org.example.streamapi.model.User;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Extension {
     /*
@@ -14,8 +15,15 @@ public class Extension {
         - swap the argument's values without introducing a new, local variable.
     */
     public int [] streamNumbers(int a, int b) {
-        // Implement me :)
-        return null;
+
+        if (a > b) {
+            a = a + b;
+            b = a - b;
+            a = a - b;
+        }
+
+        return IntStream.range(a, b)
+                .toArray();
     }
 
     /*
@@ -25,8 +33,11 @@ public class Extension {
         (use Optional API)
     */
     public User getUserByIdOrCreateNew(List<User> users, long userId) {
-        // Implement me :)
-        return null;
+
+        return users.stream()
+                .filter(user -> user.getId() == userId)
+                .findFirst()
+                .orElse(new User(userId, "New user", User.GENDER.UNKNOWN));
     }
 
     /*
@@ -37,7 +48,7 @@ public class Extension {
     */
 
     public List<String> partyWithFriends(List<Friend> friends) {
-        // Implement me :)
+
         return null;
     }
 
@@ -60,7 +71,7 @@ public class Extension {
     public List<String> sortBodybuilders(List<Bodybuilder> bodybuilders) {
         return bodybuilders.stream()
                 .sorted(builderByNameLiftAge)
-                .map(bodybuilder -> bodybuilder.getName())
+                .map(Bodybuilder::getName)
                 .toList();
 //        return null;
     }
