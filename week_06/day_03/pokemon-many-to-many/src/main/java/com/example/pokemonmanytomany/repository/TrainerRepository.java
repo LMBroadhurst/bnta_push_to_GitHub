@@ -8,6 +8,6 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
 
     @Query(value = "SELECT * FROM trainer WHERE id = ?",
            nativeQuery = true)
-    Trainer getTrainer(int id);
+    Trainer getSpecificTrainer(int id);
 
 }

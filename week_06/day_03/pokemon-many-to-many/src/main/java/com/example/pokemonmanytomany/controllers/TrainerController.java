@@ -23,12 +23,16 @@ public class TrainerController {
 
 //    Methods
 
-    @GetMapping("/trainer/{id}")
-    Trainer getTrainer(@PathVariable("id") int id) {
-        return trainerRepository.getTrainer(id);
+//    Get
+
+    @GetMapping("/specific_trainer/{id}")
+    Trainer getSpecificTrainer(@PathVariable("id") int id) {
+//       x
+        return trainerRepository.getSpecificTrainer(id);
+//       x
     }
 
-    @GetMapping("/trainers_1")
+    @GetMapping("/all_trainers")
     public ResponseEntity<List<Trainer>> getAllTrainers() {
 
         List<Trainer> trainers = trainerRepository.findAll();
@@ -38,8 +42,10 @@ public class TrainerController {
                 .body(trainers);
     }
 
-    @PostMapping("/trainers_2")
-    public ResponseEntity<Trainer> createStudent(@RequestBody Trainer trainer) {
+//    Post
+
+    @PostMapping("/create_trainer")
+    public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer trainer) {
         Trainer result = trainerRepository.save(trainer);
         return ResponseEntity
                 .ok()

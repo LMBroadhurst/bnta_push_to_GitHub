@@ -1,12 +1,9 @@
 package com.example.pokemonmanytomany.controllers;
 
 import com.example.pokemonmanytomany.model.Pokemon;
-import com.example.pokemonmanytomany.model.Trainer;
 import com.example.pokemonmanytomany.repository.PokemonRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,9 +23,11 @@ public class PokemonController {
 
 //    Methods
 
-    @GetMapping("/trainer/{id}")
-    Trainer getPokemon(@PathVariable("id") int id) {
-        return pokemonRepository.getPokemon(id);
+    @GetMapping("/specific_pokemon/{id}")
+    Pokemon getSpecificPokemon(@PathVariable("id") int id) {
+//        x
+        return pokemonRepository.getSpecificPokemon(id);
+//        x
     }
 
     @GetMapping("/all_pokemon")
@@ -39,6 +38,24 @@ public class PokemonController {
         return ResponseEntity
                 .ok()
                 .body(pokemons);
+    }
+
+
+    //    Post
+
+    @PostMapping("/create_pokemon")
+    public ResponseEntity<Pokemon> createPokemon(@RequestBody Pokemon pokemon) {
+        Pokemon result = pokemonRepository.save(pokemon);
+        return ResponseEntity
+                .ok()
+                .body(result);
+    }
+
+//    Delete
+
+    @DeleteMapping("/delete_pokemon_from_trainer/{pokemon_JSON}")
+    void deleteSpecificPokemon(@PathVariable("pokemon_JSON") Pokemon pokemon) {
+        pokemonRepository.delete(pokemon);
     }
 
 }
