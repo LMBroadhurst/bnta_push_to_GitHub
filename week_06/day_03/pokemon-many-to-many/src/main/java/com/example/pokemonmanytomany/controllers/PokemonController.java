@@ -5,6 +5,7 @@ import com.example.pokemonmanytomany.model.Trainer;
 import com.example.pokemonmanytomany.repository.PokemonRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -19,13 +20,16 @@ public class PokemonController {
 
 //     Constructors
 
-    public PokemonController() {}
-
     public PokemonController(PokemonRepository pokemonRepository) {
         this.pokemonRepository = pokemonRepository;
     }
 
 //    Methods
+
+    @GetMapping("/trainer/{id}")
+    Trainer getPokemon(@PathVariable("id") int id) {
+        return pokemonRepository.getPokemon(id);
+    }
 
     @GetMapping("/all_pokemon")
     public ResponseEntity<List<Pokemon>> getAllPokemon() {

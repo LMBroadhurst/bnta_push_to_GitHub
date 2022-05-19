@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface TrainerRepository extends JpaRepository<Trainer, Long> {
 
-    @Query(value = "SELECT * FROM trainer WHERE id = 1",
+    @Query(value = "SELECT * FROM trainer WHERE id = ?",
            nativeQuery = true)
     Trainer getTrainer(int id);
 

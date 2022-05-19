@@ -17,8 +17,6 @@ public class TrainerController {
 
 //    Constructors
 
-    public TrainerController() {}
-
     public TrainerController(TrainerRepository trainerRepository) {
         this.trainerRepository = trainerRepository;
     }
@@ -32,8 +30,6 @@ public class TrainerController {
 
     @GetMapping("/trainers_1")
     public ResponseEntity<List<Trainer>> getAllTrainers() {
-
-//        This is giving a 500 error, why?
 
         List<Trainer> trainers = trainerRepository.findAll();
 
