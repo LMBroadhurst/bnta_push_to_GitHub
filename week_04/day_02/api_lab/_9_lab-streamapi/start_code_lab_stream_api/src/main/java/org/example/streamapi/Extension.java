@@ -40,6 +40,10 @@ public class Extension {
                 .orElse(new User(userId, "New user", User.GENDER.UNKNOWN));
     }
 
+
+
+
+
     /*
         Given List<Friend>, filter the ones who are available on Saturday and want to party:
         - getAvailableDay returns "Saturday" and
@@ -50,7 +54,14 @@ public class Extension {
     public List<String> partyWithFriends(List<Friend> friends) {
 
         return null;
+
     }
+
+
+
+
+
+
 
     /*
         Return names of sorted bodybuilders.
