@@ -8,16 +8,10 @@ public class Chocolate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String name;
-
     private int cocoaPercentage;
 
-
     @ManyToOne
-//    @JoinColumn(name = "estate_id")
-//    JoinColumn?
     private Estate estate;
 
     public Chocolate(String name, int cocoaPercentage, Estate estate) {

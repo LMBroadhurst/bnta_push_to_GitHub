@@ -13,11 +13,7 @@ public class Estate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     private String name;
-
-
     private String country;
 
     @JsonIgnoreProperties({"estate"})
