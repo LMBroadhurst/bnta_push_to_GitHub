@@ -49,10 +49,9 @@ console.log(total);
 // Arrow Function // 
 // Big boiz
 // Still anonymous...
+// If arrow function is on one line, you don't need to add return. Implicit returning.
 
-const multiply = (number1, number2) => {
-    return number1 * number2;
-}
+const multiply = (number1, number2) => number1 * number2;
 
 const product = multiply(4, 5);
 
