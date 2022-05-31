@@ -6,7 +6,7 @@ const numberToPrint = 0;
 let undefinedvariable;
 // Can assign a variable without declaring it... not for const though.
 
-for (let number of numbers) {
+for (var number of numbers) {
     let numberToPrint = number;
     console.log(`Value of numberToPrint inside the loop is ${numberToPrint}.`);
 }
