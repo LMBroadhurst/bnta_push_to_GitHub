@@ -1,15 +1,37 @@
 // Constructor functions
 
-const Student = function(name) {
-    this.name = name;
+import Laptop from "./laptop";
 
-    this.greet = function() {
+class Student {
+    constructor(name) {
+        this.name = name;
+        this.laptop = null;
+    }
+    greet() {
         console.log(`Hello, my name is ${this.name}`);
+    }
+    greetWithParam(name) {
+        console.log(`Hello, my name is ${name}`);
+    }
+    buyLaptop(newLaptop) {
+        this.laptop = newLaptop;
     }
 }
 
-const alice = new Student("Alice");
-alice.greet();
 
-const bob = new Student("Bob")
-bob.greet();
+const alice = new Student("Alice");
+
+const newIMac = new Laptop("Apple", "iMac", "MacOS");
+
+console.log(alice);
+alice.buyLaptop(newIMac);
+console.log(alice);
+
+
+
+// alice.greet();
+// alice.greetWithParam("Sir Quentin");
+
+// const bob = new Student("Bob")
+// bob.greet();
+
