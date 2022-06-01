@@ -1,6 +1,7 @@
 {
-  "name": "day_03",
+  "name": "lab",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -10,7 +11,5 @@
   "license": "ISC",
   "dependencies": {
     "jest": "^28.1.0"
-  },
-  "devDependencies": {},
-  "description": ""
+  }
 }
