@@ -6,12 +6,14 @@ class Dealership {
     constructor(name, maxCars) {
         this.name = name;
         this.maxCars = maxCars;
+        this.currentCar = null;
         this.currentStock = [];
     }
 
     countCars() {
-        console.log(this.currentStock.length);
+        return (this.currentStock.length);
     }
+
     addCarToStock(manufacturer, price, engine) {
         const newCar = new Car(manufacturer, price, engine);
         if (this.currentStock.length < this.maxCars) {
@@ -20,6 +22,7 @@ class Dealership {
             return "No more space bro";
         }
     }
+
     allCarManufacturers() {
         const availManufacturers = [];
         this.currentStock.forEach(car => {
@@ -27,12 +30,14 @@ class Dealership {
         })
         return availManufacturers;
     }
+
     findCarFromSpecificManufacturer(manufacturer) {
         const foundCars = this.currentStock.filter(
             car => (manufacturer == car.manufacturer)
         );
         return foundCars;
     }
+
     totalStockValue() {
         let total = 0;
         this.currentStock.forEach(car => {
@@ -40,19 +45,13 @@ class Dealership {
         });
         return total;
     }
-    sellCar(Car) {
-        const index = this.currentStock.findIndex(Car);
-        this.currentStock = this.currentStock.splice(index, (index + 1));
-        return this.currentStock;
+
+    sellCar(car) {
+        let filtered = this.currentStock.filter(item => item != car);
+        this.cars = filtered;
     }
     
 }
-
-const LDN = new Dealership("London branch", 10,
-    [new Car("Tesla", 10000, "Electric"), new Car("VW", 2500, "1.0L")]);
-
-LDN.findCarFromSpecificManufacturer("VW");
-LDN.totalStockValue();
 
 
 module.exports = {
