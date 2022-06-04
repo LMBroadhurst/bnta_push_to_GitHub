@@ -4,3 +4,4 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Counter from './components/counter';
 
 ReactDom.render(<Counter/>, document.getElementById('root'));
+
