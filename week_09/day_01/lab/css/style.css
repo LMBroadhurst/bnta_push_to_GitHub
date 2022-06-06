@@ -57,3 +57,57 @@ header > nav > ul > li {
 }
 
 
+/* ALL MAIN STYLES */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+main > article {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* MAIN ARTICLE */
+
+article {
+    margin: 0 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+
+article > div + div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20rem;
+    max-width: 50%;
+}
+
+div > h2, div > h2 + ul > li, div > p, p + span {
+    padding-bottom: 1rem;
+}
+
+div + div > h2 {
+    font-size: 4rem;
+}
+
+.main-article-bulletpoints, h2 + ul + p {
+    font-size: 2rem;
+}
+
+p + span {
+    font-size: 1.6rem;
+}
+
+
+
+
