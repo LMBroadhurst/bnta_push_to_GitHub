@@ -1,0 +1,128 @@
+* {
+    border: 1px solid black;
+}
+
+body {
+    height: 1000px;
+
+    display: grid;
+    grid-template-areas: 
+    'section1 section2'
+    'section3 section4';
+    grid-template-rows: 5.5fr 4.5fr;
+}
+
+.sec1 {
+    grid-area: section1;
+    background-color: red;
+}
+
+
+/* Section 2 Layout */
+
+
+.sec2 {
+    grid-area: section2;
+
+    display: grid;
+    grid-template-areas: 
+    'asideT asideT'
+    'div1 div2';
+}
+
+.asideT {
+    grid-area: asideT;
+    background-color: yellow;
+}
+
+.div1 {
+    grid-area: div1;
+    background-color: antiquewhite;
+}
+
+.div2 {
+    grid-area: div2;
+    background-color: antiquewhite;
+}
+
+
+/* Section 3 Layout */
+
+.sec3 {
+    grid-area: section3;
+
+    display: grid;
+    grid-template-areas: 
+    'lefts3 rights3';
+}
+
+.sec3left {
+    grid-area: lefts3;
+
+    display: grid;
+    grid-template-areas: 
+    'tops3left'
+    'bottoms3left';
+    grid-template-rows: 7fr 3fr;
+}
+
+.tops3left {
+    grid-area: tops3left;
+    background-color: black;
+}
+
+.bottoms3left {
+    grid-area: bottoms3left;
+    background-color: antiquewhite;
+}
+
+
+
+.sec3right {
+    grid-area: rights3;
+
+    display: grid;
+    grid-template-areas: 
+    'top13right'
+    'mid13right'
+    'bot13right';
+}
+
+.top13right {
+    grid-area: top13right;
+    background-color: antiquewhite;
+}
+
+.mid13right {
+    grid-area: mid13right;
+    background-color: antiquewhite;
+}
+
+.bot13right {
+    grid-area: bot13right;
+    background-color: black;
+}
+
+
+
+/* Section 4 layout */
+
+.sec4 {
+    grid-area: section4;
+
+    display: grid;
+    grid-template-areas: 
+    'top13'
+    'bot23';
+    grid-template-rows: 3.33fr 6.66fr;
+}
+
+.top13 {
+    grid-area: top13;
+    background-color: antiquewhite;
+}
+
+.bot23 {
+    grid-area: bot23;
+    background-color: blue;
+}
