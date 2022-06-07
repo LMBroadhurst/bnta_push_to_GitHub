@@ -1,0 +1,45 @@
+* {
+    border: 1px solid black;
+}
+
+main, aside, div {
+    /* height: 100px; */
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    'main asidep1';
+    grid-template-columns: 6fr 4fr;
+    height: 1000px;
+}
+
+.main {
+    grid-area: main;
+    background-color: red;
+}
+
+.asidep1 {
+    grid-area: asidep1;
+
+    display: grid;
+    grid-template-areas: 
+    'asideT asideT'
+    'div1 div2';
+    /* grid-template-columns: 5fr 5fr; */
+}
+
+.asideT {
+    grid-area: asideT;
+    background-color: yellow;
+}
+
+.div1 {
+    grid-area: div1;
+    background-color: antiquewhite;
+}
+
+.div2 {
+    grid-area: div2;
+    background-color: antiquewhite;
+}

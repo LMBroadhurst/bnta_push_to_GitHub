@@ -1,7 +1,14 @@
 @media (min-width: 720px) {
     
-body {
-    background-color: dodgerblue;
-}
+    body {
+        background-color: dodgerblue;
+    }
+
+    aside {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
 
 }
