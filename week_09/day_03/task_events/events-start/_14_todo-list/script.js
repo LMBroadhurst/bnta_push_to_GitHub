@@ -43,6 +43,7 @@ function deleteListItem(event) {
 }
 
 
+
 // TODO add click event listener to enterButton that calls addListAfterClick
 
 // TODO add keypress event listener to input that calls addListAfterKeypress
