@@ -23,7 +23,8 @@ const handlePlayerGuess = (event) => {
 
     if (event.target.guess.value === currentquestion.correct_answer) {
         resultText.innerText = "Congrats!";
-        const currentScore = scoreContainer.innerText;
+        let currentScore = Number(scoreContainer.innerText);
+        debugger
         currentScore += 1;
         scoreContainer.innerText = currentScore;
     } else {
