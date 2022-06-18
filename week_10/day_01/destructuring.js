@@ -18,10 +18,19 @@ console.log(firstNumber);
 const lewis = {
     name: "Lewis",
     age: 27,
+    homeTown: "Birmingham",
+    favouriteColours: ["Blue", "Red", "Purple", "Hot Pink"],
 }
 
-const {name, age} = lewis;
+const {name, age, favouriteColours, homeTown} = lewis;
+
+const [thing1, thing2, ...leftovers] = favouriteColours;
+
 console.log(name);
+console.log(homeTown);
+
+console.log(thing2);
+console.log(leftovers);
 
 
 

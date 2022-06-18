@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    function displayDate() {
+      document.querySelector("#date").innerText = Date();
+    }
+  </script>
+</head>
+
+<body>
+
+  <h2>JavaScript HTML Events - click</h2>
+  <p id="date"></p>
+
+  <!-- TODO add onclick event to call displayDate() -->
+  <button type="button" ondblclick=displayDate()>Click me to display Date.</button>
+
+</body>
+
+</html>
