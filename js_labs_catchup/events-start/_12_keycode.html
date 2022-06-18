@@ -3,12 +3,23 @@
 
 <head>
     <script>
-  
+
+        const displayKeycode = (event) => {
+            
+            
+            document.getElementById("msg").innerText = event.which;
+        }
+
+        const removeKeycode = () => {
+
+            document.getElementById("msg").innerText = "";
+        }
+
     </script>
 
 </head>
 
-<body>
+<body onkeydown="displayKeycode(event)" onkeyup="removeKeycode()">
 
     <p>Click on this page, and press a key on your keyboard to display the keycode.</p>
 
